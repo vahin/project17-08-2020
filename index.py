@@ -1,8 +1,6 @@
-import pandas as pd
-import csv
-import plotly.graph_objects as go
-import plotly.express as px
+from pandas import read_csv as rc
+from plotly.express import scatter
 
-df = pd.read_csv("pixelMath.csv")
-fig = px.scatter(df, x='student_id', y='level', color="attempt", size='size')
+df = rc("pixelMath.csv")
+fig = scatter(df, x='student_id', y='level', color="attempt", size='size')
 fig.show()
